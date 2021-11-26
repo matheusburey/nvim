@@ -12,3 +12,4 @@ require('plugins.feline')
 
 require('nvim-autopairs').setup({disable_filetype = { "TelescopePrompt" , "vim" }})
 require('nvim-ts-autotag').setup()
+require("bufferline").setup()
