@@ -10,7 +10,7 @@ require('plugins.dashboard')
 require('plugins.treesitter')
 require('plugins.feline')
 require("plugins.signature")
-require("plugins.lspconfig")
+require("plugins.lspconfig") -- Install server: npm i -g pyright
 require("plugins.cmp")
 
 require('nvim-autopairs').setup({disable_filetype = { "TelescopePrompt" , "vim" }})
