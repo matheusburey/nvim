@@ -20,9 +20,16 @@ map('n', '<C-s>', ':write<CR>', default_opts)
 -- fast saving quit <leader> and q
 map('n', '<C-q>', ':quit<CR>', default_opts)
 
--- fast saving quit <leader> and q
-map('n', '<C-Up>', ':m .-2<CR>', default_opts)
-map('n', '<C-Down>', ':m .+1<CR>', default_opts)
+-- Move text up and down
+map('n', '<C-j>', ':m .-2<CR>', default_opts)
+map('n', '<C-k>', ':m .+1<CR>', default_opts)
+-- Visual Block --
+map('x', "<A-j>", ":m '>+1<CR>gv-gv", default_opts)
+map("x", "<A-k>", ":m '<-2<CR>gv-gv", default_opts)
 
 -- nvim-tree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', default_opts)       -- open/close
+
+-- Navigate buffers
+map("n", "<Tab>", ":bnext<CR>", default_opts)
+
