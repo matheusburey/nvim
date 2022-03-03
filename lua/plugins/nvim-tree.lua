@@ -1,93 +1,84 @@
------------------------------------------------------------
--- File manager configuration file
------------------------------------------------------------
+-- init.lua
 
--- Plugin: nvim-tree
--- https://github.com/kyazdani42/nvim-tree.lua
-
--- Keybindings are defined in `keymapping.lua`:
---- https://github.com/kyazdani42/nvim-tree.lua#keybindings
-
--- Note: options under the g: command should be set BEFORE running the
---- setup function:
---- https://github.com/kyazdani42/nvim-tree.lua#setup
---- See: `help NvimTree`
-local g = vim.g
-
-vim.o.termguicolors = true
-
-g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
-g.nvim_tree_git_hl = git_status
---g.nvim_tree_gitignore = 0
-g.nvim_tree_highlight_opened_files = 0
-g.nvim_tree_indent_markers = 1
---g.nvim_tree_ignore = { ".git", "node_modules", ".cache" }
-g.nvim_tree_quit_on_open = 0 -- closes tree when file's opened
-g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
-g.nvim_tree_window_picker_exclude = {
-   filetype = { 'notify', 'packer', 'qf' },
-   buftype = {'terminal' },
-}
-
-g.nvim_tree_show_icons = {
-   folders = 1,
-   -- folder_arrows= 1
-   files = 1,
-   git = git_status,
-}
-
-g.nvim_tree_icons = {
-   default = "",
-   symlink = "",
-   git = {
-      deleted = "",
-      ignored = "◌",
-      renamed = "➜",
-      staged = "✓",
-      unmerged = "",
-      unstaged = "✗",
-      untracked = "★",
-   },
-   folder = {
-      -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
-      -- arrow_open = "",
-      -- arrow_closed = "",
-      default = "",
-      empty = "", -- 
-      empty_open = "",
-      open = "",
-      symlink = "",
-      symlink_open = "",
-   },
-}
-
-require('nvim-tree').setup {
+-- following options are the default
+-- each of these are documented in `:help nvim-tree.OPTION_NAME`
+require'nvim-tree'.setup {
+  disable_netrw        = false,
+  hijack_netrw         = true,
+  open_on_setup        = false,
+  ignore_buffer_on_setup = false,
+  ignore_ft_on_setup   = {},
+  auto_close           = false,
+  auto_reload_on_write = true,
+  open_on_tab          = false,
+  hijack_cursor        = false,
+  update_cwd           = false,
+  hijack_unnamed_buffer_when_opening = false,
+  hijack_directories   = {
+    enable = true,
+    auto_open = true,
+  },
   diagnostics = {
-      enable = false,
-      icons = {
-         hint = "",
-         info = "",
-         warning = "",
-         error = "",
-      },
-   },
-   filters = {
-      dotfiles = false,
-   },
-   disable_netrw = true,
-   hijack_netrw = true,
-   ignore_ft_on_setup = { "dashboard" },
-   auto_close = false,
-   open_on_tab = false,
-   hijack_cursor = true,
-   update_cwd = true,
-   update_focused_file = {
+    enable = false,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  },
+  update_focused_file = {
+    enable      = false,
+    update_cwd  = false,
+    ignore_list = {}
+  },
+  system_open = {
+    cmd  = nil,
+    args = {}
+  },
+  filters = {
+    dotfiles = false,
+    custom = {}
+  },
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 500,
+  },
+  view = {
+    width = 30,
+    height = 30,
+    hide_root_folder = false,
+    side = 'left',
+    preserve_window_proportions = false,
+    mappings = {
+      custom_only = false,
+      list = {}
+    },
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes"
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true
+  },
+  actions = {
+    change_dir = {
       enable = true,
-      update_cwd = false,
-   },
-   view = {
-      allow_resize = true,
-      side = "left",
-      width = 25,
-   },
+      global = false,
+    },
+    open_file = {
+      quit_on_open = false,
+      resize_window = false,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame", },
+          buftype  = { "nofile", "terminal", "help", },
+        }
+      }
+    }
+  }
 }
