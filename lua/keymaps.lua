@@ -33,4 +33,5 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>", default_opts)       -- open/close
 -- Navigate buffers
 map("n", "<M-l>", ":bnext<CR>", default_opts)
 map("n", "<M-h>", ":bprevious<CR>", default_opts)
+map("n", "<M-c>", ":bdelet<CR>", default_opts)
 
