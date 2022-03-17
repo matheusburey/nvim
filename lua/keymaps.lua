@@ -21,15 +21,16 @@ map("n", "<C-s>", ":write<CR>", default_opts)
 map("n", "<C-q>", ":quit<CR>", default_opts)
 
 -- Move text up and down
-map("n", "<C-k>", ":m .-2<CR>", default_opts)
-map("n", "<C-j>", ":m .+1<CR>", default_opts)
+map("n", "<M-k>", ":m .-2<CR>", default_opts)
+map("n", "<M-j>", ":m .+1<CR>", default_opts)
 -- Visual Block --
-map("x", "<C-k>", ":m '<-2<CR>gv-gv", default_opts)
-map("x", "<C-j>", ":m '>+1<CR>gv-gv", default_opts)
+map("x", "<M-k>", ":m '<-2<CR>gv-gv", default_opts)
+map("x", "<M-j>", ":m '>+1<CR>gv-gv", default_opts)
 
 -- nvim-tree
 map("n", "<C-n>", ":NvimTreeToggle<CR>", default_opts)       -- open/close
 
 -- Navigate buffers
-map("n", "<Tab>", ":bnext<CR>", default_opts)
+map("n", "<M-l>", ":bnext<CR>", default_opts)
+map("n", "<M-h>", ":bprevious<CR>", default_opts)
 
