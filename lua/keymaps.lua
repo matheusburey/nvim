@@ -35,3 +35,4 @@ map("n", "<M-l>", ":bnext<CR>", default_opts)
 map("n", "<M-h>", ":bprevious<CR>", default_opts)
 map("n", "<M-c>", ":bdelet<CR>", default_opts)
 
+map("n", "<M-g>", ":Telescope<CR>", default_opts)
