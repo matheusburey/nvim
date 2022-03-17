@@ -9,7 +9,7 @@ require('plugins.feline')
 require("plugins.signature")
 require("plugins.lspconfig") -- Install server: pip install pynvim
 require("plugins.cmp")
+require('plugins.autopairs')
 
-require('nvim-autopairs').setup({disable_filetype = { "TelescopePrompt" , "vim" }})
 require('nvim-ts-autotag').setup()
 require("bufferline").setup()
