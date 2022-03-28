@@ -52,7 +52,7 @@ end
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
-opt.expandtab = true      -- use spaces instead of tabs
+--opt.expandtab = true      -- use spaces instead of tabs
 opt.shiftwidth = 2        -- shift 2 spaces when tab
 opt.tabstop = 2           -- 1 tab == 2 spaces
 opt.smartindent = true    -- autoindent new lines
