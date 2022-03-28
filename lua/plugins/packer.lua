@@ -18,71 +18,71 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
-return require("packer").startup(function()
-    -- Packer can manage itself
-    use "wbthomason/packer.nvim"
 
-    -- Packer devicons
-    use "kyazdani42/nvim-web-devicons"
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
 
-    -- Packer dashboard
-    use "glepnir/dashboard-nvim"
-
-    -- Packer file explorer
-    use {
-        "kyazdani42/nvim-tree.lua"
-    }
-
-    -- Packer statusline
-    use {
-        "famiu/feline.nvim"
-    }
-
-    -- Packer theme dracula
-    use {
-        "Mofiqul/dracula.nvim"
-    }	
-    -- Packer autopairs
-    use {
-        "windwp/nvim-autopairs"	
-    }
-
-    -- Packer configurations and abstraction layer for Neovim
-    use {
-        "nvim-treesitter/nvim-treesitter"
-    }
-
-    -- Packer autoclose and autorename html tag
-    use {
-        "windwp/nvim-ts-autotag"
-    }
-
-    -- Packer telescope
-    use {
-        "nvim-telescope/telescope.nvim",
-        requires = { {"nvim-lua/plenary.nvim"} }
-    }
-
-    -- Packer bufferline
-    use {
-        "akinsho/bufferline.nvim"
-    }
-
-    -- LSP plugins
-    -- Packer Show function signature when you type
-    use {
-        "ray-x/lsp_signature.nvim" 
-    }
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
 
 
-    -- Packer lspconf
-    use {
-        "neovim/nvim-lspconfig" 
-    }
+return packer.startup(function()
+  -- Packer can manage itself
+  use "wbthomason/packer.nvim"
 
-    -- Packer nvim-cmp
-    use {
-        "hrsh7th/nvim-cmp",
-        requires = { { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" } }
-    }
+  -- Packer devicons
+  use "kyazdani42/nvim-web-devicons"
+
+  -- Packer dashboard
+  use "glepnir/dashboard-nvim"
+
+  -- Packer file explorer
+  use "kyazdani42/nvim-tree.lua" 
+  -- Packer statusline
+  use "famiu/feline.nvim"
+
+  -- Packer theme dracula
+  use "Mofiqul/dracula.nvim"
+
+  -- Packer autopairs
+  use "windwp/nvim-autopairs"	
+
+
+  -- Packer configurations and abstraction layer for Neovim
+  use  "nvim-treesitter/nvim-treesitter"
+
+  -- Packer autoclose and autorename html tag
+  use "windwp/nvim-ts-autotag"
+
+  -- Packer telescope
+  use "nvim-telescope/telescope.nvim"
+  use "nvim-lua/plenary.nvim"
+
+
+  -- Packer bufferline
+  use "akinsho/bufferline.nvim"
+
+  -- LSP plugins
+  -- Packer Show function signature when you type
+  use "ray-x/lsp_signature.nvim" 
+
+  -- Packer lspconf
+  use "neovim/nvim-lspconfig" 
+
+  -- Packer nvim-cmp
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-buffer"
+  use "hrsh7th/cmp-path"
+  use "hrsh7th/cmp-cmdline"
+  use "L3MON4D3/LuaSnip" 
+  use "saadparwaiz1/cmp_luasnip" 
 end)
