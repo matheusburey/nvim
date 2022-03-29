@@ -23,15 +23,16 @@ map("n", "<C-q>", ":quit<CR>", default_opts)
 -- Move text up and down
 map("n", "<M-k>", ":m .-2<CR>", default_opts)
 map("n", "<M-j>", ":m .+1<CR>", default_opts)
+
 -- Visual Block --
 map("x", "<M-k>", ":m '<-2<CR>gv-gv", default_opts)
 map("x", "<M-j>", ":m '>+1<CR>gv-gv", default_opts)
 
 -- Better window navigation
-map("n", "<C-h>", "<C-w>h", default_opts)
-map("n", "<C-j>", "<C-w>j", default_opts)
-map("n", "<C-k>", "<C-w>k", default_opts)
-map("n", "<C-l>", "<C-w>l", default_opts)
+map("n", "<M-H>", "<C-w>h", default_opts)
+map("n", "<M-J>", "<C-w>j", default_opts)
+map("n", "<M-K>", "<C-w>k", default_opts)
+map("n", "<M-L>", "<C-w>l", default_opts)
 
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>", default_opts)
