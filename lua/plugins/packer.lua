@@ -55,6 +55,8 @@ return packer.startup(function()
   -- Packer autopairs
   use "windwp/nvim-autopairs"	
 
+  -- Packer git decorations
+  use "lewis6991/gitsigns.nvim"
 
   -- Packer configurations and abstraction layer for Neovim
   use  "nvim-treesitter/nvim-treesitter"

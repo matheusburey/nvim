@@ -12,4 +12,5 @@ require("plugins.cmp")
 require("plugins.autopairs")
 
 require("nvim-ts-autotag").setup()
+require('gitsigns').setup()
 require("plugins.bufferline")
