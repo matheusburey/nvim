@@ -20,6 +20,9 @@ map("n", "<C-s>", ":write<CR>", default_opts)
 -- fast saving quit ctrl and q
 map("n", "<C-q>", ":quit<CR>", default_opts)
 
+-- paste does not change clipboard
+keymap("v", "p", '"_dP', {silent = true})
+
 -- Move text up and down
 map("n", "<M-k>", ":m .-2<CR>", default_opts)
 map("n", "<M-j>", ":m .+1<CR>", default_opts)
