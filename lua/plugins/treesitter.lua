@@ -2,6 +2,7 @@ local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
 	return
 end
+
 configs.setup({
 	ensure_installed = {
       "lua", "html", "javascript", "python", "css", "php", "tsx", "typescript", "bash"
@@ -27,6 +28,14 @@ configs.setup({
 	},
 	rainbow = {
 		enable = true,
+		colors = {
+			"Gold",
+			"Orchid",
+			"DodgerBlue",
+			-- "Cornsilk",
+			-- "Salmon",
+			-- "LawnGreen",
+		},
 	},
 	playground = {
 		enable = true,
