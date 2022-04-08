@@ -47,6 +47,9 @@ return packer.startup(function()
 	-- Packer file explorer
 	use "kyazdani42/nvim-tree.lua"
 
+	-- Packer smart commenting
+	use "numToStr/Comment.nvim"
+
 	-- Packer statusline
 	use "famiu/feline.nvim"
 
@@ -60,9 +63,9 @@ return packer.startup(function()
 	use "lewis6991/gitsigns.nvim"
 
 	-- Packer configurations and abstraction layer for Neovim
-	use  "nvim-treesitter/nvim-treesitter"
-	use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "p00f/nvim-ts-rainbow"
+	use "nvim-treesitter/nvim-treesitter"
+	use "p00f/nvim-ts-rainbow"
+	use "nvim-treesitter/playground"
 
 	-- Packer autoclose and autorename html tag
 	use "windwp/nvim-ts-autotag"
@@ -70,7 +73,6 @@ return packer.startup(function()
 	-- Packer telescope
 	use "nvim-telescope/telescope.nvim"
 	use "nvim-lua/plenary.nvim"
-
 
 	-- Packer bufferline
 	use "akinsho/bufferline.nvim"
