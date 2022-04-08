@@ -21,7 +21,7 @@ map("n", "<C-s>", ":write<CR>", default_opts)
 map("n", "<C-q>", ":quit<CR>", default_opts)
 
 -- paste does not change clipboard
-keymap("v", "p", '"_dP', {silent = true})
+map("v", "p", '"_dP', {silent = true})
 
 -- Move text up and down
 map("n", "<M-k>", ":m .-2<CR>", default_opts)
@@ -53,3 +53,5 @@ map("n", "<M-c>", ":bdelet<CR>", default_opts)
 
 -- Open Telescope
 map("n", "<M-g>", ":Telescope<CR>", default_opts)
+
+map("n", "<F1>", "<cmd>Telescope git_status<cr>", default_opts)
