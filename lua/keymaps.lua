@@ -55,3 +55,7 @@ map("n", "<M-c>", ":bdelet<CR>", default_opts)
 map("n", "<M-g>", ":Telescope<CR>", default_opts)
 
 map("n", "<F1>", "<cmd>Telescope git_status<cr>", default_opts)
+
+-- Null-ls format file
+map("n", "<C-f>", ":Format<CR>", default_opts)
+

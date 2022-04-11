@@ -24,33 +24,6 @@ local config_lsp = {
 			},
 		},
 	},
-	eslint_opts = {
-		codeAction = {
-			disableRuleComment = {
-				enable = true,
-				location = "separateLine"
-			},
-			showDocumentation = {
-				enable = true
-			}
-		},
-		codeActionOnSave = {
-			enable = false,
-			mode = "all"
-		},
-		format = true,
-		nodePath = "",
-		onIgnoredFiles = "off",
-		packageManager = "npm",
-		quiet = false,
-		rulesCustomizations = {},
-		run = "onType",
-		useESLintClass = false,
-		validate = "on",
-		workingDirectory = {
-			mode = "location"
-		}
-	},
 	emmet_opts= {
 		cmd = { "ls_emmet", "--stdio" },
 		filetypes = {
@@ -127,11 +100,6 @@ lsp_installer.on_server_ready(function(server)
 	if server.name == "emmet_ls" then
 		opts = vim.tbl_deep_extend("force", config_lsp.emmet_opts, opts)
 	end
-
-	if server.name == "eslint" then
-		opts = vim.tbl_deep_extend("force", config_lsp.eslint_opts, opts)
-	end
-
 
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
