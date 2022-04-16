@@ -44,10 +44,7 @@ opt.synmaxcol = 240       -- max column for syntax highlight
 -- Colorscheme
 -----------------------------------------------------------
 opt.termguicolors = true      -- enable 24-bit RGB colors
-local status_ok, packer = pcall(require, "dracula")
-if status_ok then
-  cmd [[colorscheme dracula]]
-end
+pcall(vim.cmd, "colorscheme " .. "dracula")
 
 -----------------------------------------------------------
 -- Tabs, indent
