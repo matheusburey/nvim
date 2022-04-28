@@ -7,18 +7,16 @@ configs.setup({
 	ensure_installed = {
       "lua", "html", "javascript", "python", "css", "php", "tsx", "typescript", "bash"
    },
-	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
     -- use_languagetree = true,
 		enable = true, -- false will disable the whole extension
-		-- disable = { "css", "html" }, -- list of language that will be disabled
+		disable = { "css", "html" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
 	autopairs = {
 		enable = true,
 	},
-	indent = { enable = true, disable = { "python", "css" } },
+	indent = { enable = true},
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
@@ -32,9 +30,9 @@ configs.setup({
 			"Gold",
 			"Orchid",
 			"DodgerBlue",
-			-- "Cornsilk",
-			-- "Salmon",
-			-- "LawnGreen",
+			"Cornsilk",
+			"Salmon",
+			"LawnGreen",
 		},
 	},
 	playground = {
