@@ -51,7 +51,7 @@ return packer.startup(function()
 	use "numToStr/Comment.nvim"
 
 	-- Packer statusline
-	use "famiu/feline.nvim"
+	use "feline-nvim/feline.nvim"
 
 	-- Packer theme dracula
 	use "Mofiqul/dracula.nvim"
