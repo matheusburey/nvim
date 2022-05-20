@@ -2,7 +2,6 @@
 -----------------------------------------------------------
 -- Neovim API aliases
 -----------------------------------------------------------
-local cmd = vim.cmd     				-- execute Vim commands
 local opt = vim.opt         		-- global/buffer/windows-scoped options
 
 -----------------------------------------------------------
@@ -49,7 +48,7 @@ pcall(vim.cmd, "colorscheme " .. "dracula")
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
---opt.expandtab = true      -- use spaces instead of tabs
+opt.expandtab = true      -- use spaces instead of tabs
 opt.shiftwidth = 2        -- shift 2 spaces when tab
 opt.tabstop = 2           -- 1 tab == 2 spaces
 opt.smartindent = true    -- autoindent new lines
