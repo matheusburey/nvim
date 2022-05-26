@@ -47,6 +47,9 @@ return packer.startup(function()
 	-- Packer file explorer
 	use "kyazdani42/nvim-tree.lua"
 
+	-- Packer terminal
+  use "akinsho/toggleterm.nvim"
+
 	-- Packer smart commenting
 	use "numToStr/Comment.nvim"
 

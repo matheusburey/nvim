@@ -10,6 +10,7 @@ for _, plu in pairs(plugins) do
   end
 end
 
+require("plugins.toggleterm")
 require("plugins.autopairs")
 require("plugins.dashboard")
 require("plugins.feline")
