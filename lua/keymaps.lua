@@ -10,8 +10,13 @@ local default_opts = { noremap = true, silent = true }
 -- Neovim shortcuts:
 -----------------------------------------------------------
 
+--Remap space as leader key
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { silent = true })
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- map Esc to kk
-map("i", "kk", "<Esc>", {noremap = true})
+map("i", "kk", "<Esc>", { noremap = true })
 
 -- fast saving with ctrl  and s
 map("n", "<C-s>", ":write<CR>", default_opts)
@@ -20,7 +25,7 @@ map("n", "<C-s>", ":write<CR>", default_opts)
 map("n", "<C-q>", ":quit<CR>", default_opts)
 
 -- paste does not change clipboard
-map("v", "p", '"_dP', {silent = true})
+map("v", "p", '"_dP', { silent = true })
 
 -- Move text up and down
 map("n", "<M-k>", ":m .-2<CR>", default_opts)
@@ -51,7 +56,13 @@ map("n", "<M-h>", ":bprevious<CR>", default_opts)
 map("n", "<M-c>", ":bdelet<CR>", default_opts)
 
 -- Open Telescope
-map("n", "<M-g>", ":Telescope<CR>", default_opts)
+map("n", "<F1>", ":Telescope<CR>", default_opts)
+map("n", "<F2>", "<cmd>Telescope git_status<cr>", default_opts)
 
-map("n", "<F1>", "<cmd>Telescope git_status<cr>", default_opts)
+-- Gitsigns
+map("n", "<M-d>", "<cmd>Gitsigns diffthis<cr>", default_opts)
+
+-- ToggleTerm
+map("n", "<M-f>", ":ToggleTerm direction=float<cr>", default_opts)
+map("n", "<M-b>", ":ToggleTerm direction=horizontal<cr>", default_opts)
 
