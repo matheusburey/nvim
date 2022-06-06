@@ -11,7 +11,7 @@ local default_opts = { noremap = true, silent = true }
 -----------------------------------------------------------
 
 --Remap space as leader key
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { silent = true })
+map("", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -64,7 +64,9 @@ map("n", "<M-d>", "<cmd>Gitsigns diffthis<CR>", default_opts)
 
 -- ToggleTerm
 map("n", "<M-f>", ":ToggleTerm direction=float<CR>", default_opts)
-map("n", "<M-b>", ":ToggleTerm direction=horizontal<CR>", default_opts)
+map("n", "<M-b>", ":ToggleTerm size=10 direction=horizontal<CR>", default_opts)
+
+map("n", "<F10>", "<cmd>lua _HTOP_TOGGLE()<CR>", default_opts)
 
 map("n", "<F3>", ":TermExec cmd='git commit'<CR>", default_opts)
 map("n", "<F5>", ":TermExec cmd='npm run dev'<CR>", default_opts)
