@@ -5,37 +5,11 @@ end
 
 configs.setup({
 	ensure_installed = {
-      "lua", "html", "javascript", "python", "css", "php", "tsx", "typescript", "bash"
+      "lua", "html", "javascript", "python", "tsx", "typescript", "bash"
    },
 	highlight = {
-    -- use_languagetree = true,
 		enable = true, -- false will disable the whole extension
-		disable = { "css", "html" }, -- list of language that will be disabled
+		disable = { "css" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
-	},
-	autopairs = {
-		enable = true,
-	},
-	indent = { enable = true, disable={"python"}},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
-	autotag = {
-		enable = true,
-	},
-	rainbow = {
-		enable = true,
-		colors = {
-			"Gold",
-			"Orchid",
-			"DodgerBlue",
-			"Cornsilk",
-			"Salmon",
-			"LawnGreen",
-		},
-	},
-	playground = {
-		enable = true,
 	},
 })
