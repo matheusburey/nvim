@@ -16,13 +16,13 @@ opt.swapfile = false          -- don't use swapfile
 -----------------------------------------------------------
 opt.number = true             -- show line number
 opt.showmatch = true          -- highlight matching parenthesis
-opt.splitright = true         -- vertical split to the right
-opt.splitbelow = true         -- orizontal split to the bottom
+opt.splitright = false         -- vertical split to the right
+opt.splitbelow = false         -- orizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
-opt.smartcase = true          -- ignore lowercase for the whole pattern
+opt.smartcase = false          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
 opt.showmode = false          -- we don't need to see things like -- INSERT -- anymore
-opt.cmdheight = 2             -- more space in the neovim command line for displaying messages
+opt.cmdheight = 0             -- more space in the neovim command line for displaying messages
 opt.fileencoding = "utf-8"    -- the encoding written to a file
 opt.pumheight = 10            -- pop up menu height
 opt.splitbelow = true         -- force all horizontal splits to go below current window
