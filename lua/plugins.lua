@@ -1,7 +1,7 @@
 require("plugins.packer")
 --PLUGINS--
 
-local plugins = { "nvim-tree", "nvim-ts-autotag", "gitsigns", "bufferline", "Comment", "lsp_signature", "plugins.lspconfig" }
+local plugins = { "nvim-tree", "nvim-ts-autotag", "gitsigns", "bufferline", "Comment", "lsp_signature", "plugins.lspconfig", "ufo" }
 
 for _, plu in pairs(plugins) do
   local present, plugin = pcall(require, plu)

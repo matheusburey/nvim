@@ -31,10 +31,14 @@ packer.init {
 	},
 }
 
-local use = require('packer').use
+local use = require("packer").use
 return packer.startup(function()
 	-- Packer can manage itself
 	use "wbthomason/packer.nvim"
+
+  -- provides framework for easy foldtext customization
+  use "kevinhwang91/nvim-ufo"
+  use "kevinhwang91/promise-async"
 
 	-- Packer devicons
 	use "kyazdani42/nvim-web-devicons"

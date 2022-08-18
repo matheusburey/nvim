@@ -22,7 +22,6 @@ opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = false          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
 opt.showmode = false          -- we don't need to see things like -- INSERT -- anymore
-opt.cmdheight = 0             -- more space in the neovim command line for displaying messages
 opt.fileencoding = "utf-8"    -- the encoding written to a file
 opt.pumheight = 10            -- pop up menu height
 opt.splitbelow = true         -- force all horizontal splits to go below current window
@@ -30,6 +29,7 @@ opt.splitright = true         -- force all vertical splits to go to the right of
 opt.undofile = true           -- enable persistent undo
 opt.updatetime = 300          -- faster completion (4000ms default)
 opt.numberwidth = 2           -- define a largura da coluna do número para 2 {padrão 4}
+opt.foldlevel = 10            -- Using ufo provider need a large value, feel free to decrease the value
 
 -----------------------------------------------------------
 -- Memory, CPU
