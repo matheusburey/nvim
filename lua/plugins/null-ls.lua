@@ -13,9 +13,9 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.eslint.with { extra_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" }},
-    diagnostics.eslint.with { extra_filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact", "vue" }},
-    formatting.black.with { extra_filetypes = { "python" }, extra_args = { "--fast" } },
-		diagnostics.flake8.with { extra_filetypes = { "python" }}
+    formatting.eslint.with { extra_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" } },
+    diagnostics.eslint.with { extra_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" } },
+    formatting.isort.with { extra_filetypes = { "python" }, extra_args = { "--profile", "black" } },
+    diagnostics.flake8.with { extra_args = { "--ignore", "E501" } }
   }
 }
