@@ -15,7 +15,7 @@ null_ls.setup {
   sources = {
     formatting.eslint.with { extra_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" } },
     diagnostics.eslint.with { extra_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" } },
-    formatting.isort.with { extra_filetypes = { "python" }, extra_args = { "--profile", "black" } },
+    formatting.black.with { extra_filetypes = { "python" } },
     diagnostics.flake8.with { extra_filetypes = { "python" } }
   }
 }
