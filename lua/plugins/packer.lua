@@ -43,7 +43,7 @@ return packer.startup(function(use)
   use "nvim-tree/nvim-web-devicons"
 
   -- Packer dashboard
-  use { "glepnir/dashboard-nvim", event = 'VimEnter' }
+  use "goolord/alpha-nvim"
 
   -- Packer file explorer
   use "kyazdani42/nvim-tree.lua"

@@ -1,62 +1,35 @@
-local status_ok, db = pcall(require, "dashboard")
+local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
   return
 end
 
-vim.g.dashboard_default_executive = "telescope"
+local dashboard = require "alpha.themes.dashboard"
 
-db.setup({
-  theme = 'doom', --  theme is doom and hyper default is hyper
-  config = {
-    header = {
-      "",
-      "",
-      "███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
-      "████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
-      "██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
-      "██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
-      "██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
-      "╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
-      "",
-      "",
-    },
-    center = {
-      {
-        icon = '  ',
-        icon_hl = {fg = "#ff0000"},
-        desc = 'Recents                   ',
-        desc_hl = {fg = "#ff0000"},
-        key = 'SPC f o',
-        key_hl = {fg = "#ff0000"},
-        action = 'Telescope oldfiles'
-      },
-      {
-        icon = '  ',
-        icon_hl = {fg = "#ff0000"},
-        desc = 'Find File                 ',
-        desc_hl = {fg = "#ff0000"},
-        key = 'SPC f f',
-        key_hl = {fg = "#ff0000"},
-        action = 'Telescope find_files'
-      },
-      {
-        icon = '  ',
-        icon_hl = {fg = "#ff0000"},
-        desc = 'Find Word                 ',
-        desc_hl = {fg = "#ff0000"},
-        key = 'SPC f w',
-        key_hl = {fg = "#ff0000"},
-        action = 'Telescope live_grep'
-      },
-      {
-        icon = '  ',
-        icon_hl = {fg = "#ff0000"},
-        desc = 'New File                  ',
-        desc_hl = {fg = "#ff0000"},
-        key = 'SPC f n',
-        key_hl = {fg = "#ff0000"},
-        action = 'DashboardNewFile'
-      },
-    },
-  }
-})
+dashboard.section.header.val = {
+  "",
+  "",
+  "███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗",
+  "████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║",
+  "██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║",
+  "██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║",
+  "██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║",
+  "╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝",
+  "",
+  "",
+}
+
+dashboard.section.buttons.val = {
+  dashboard.button("r", "" .. " Recent files", ":Telescope oldfiles <CR>"),
+  dashboard.button("f", "" .. " Find file", ":Telescope find_files <CR>"),
+  dashboard.button("e", "" .. " New file", ":ene <BAR> startinsert <CR>"),
+  dashboard.button("p", " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+  dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
+  dashboard.button("s", "" .. " Find Session", ":SearchSession<CR>"),
+}
+
+dashboard.section.header.opts.hl = "Include"
+dashboard.section.buttons.opts.hl = "Macro"
+dashboard.section.footer.opts.hl = "Type"
+
+dashboard.opts.opts.noautocmd = true
+alpha.setup(dashboard.opts)
