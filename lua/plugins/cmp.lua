@@ -36,12 +36,13 @@ local icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
+  Robot = "󰚩"
 }
 
 cmp.setup {
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- For `luasnip` users.
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = {
@@ -86,23 +87,22 @@ cmp.setup {
 			-- Kind icons
 			vim_item.kind = string.format("%s", icons[vim_item.kind])
 
-			if entry.source.name == "cmp_tabnine" then
-				-- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-				vim_item.kind = icons.misc.Robot
+			if entry.source.name == "codeium" then
+				vim_item.kind = icons.Robot
 			end
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			-- NOTE: order matters
 			vim_item.menu = ({
+				codeium = "",
+				luasnip = "",
 				nvim_lua = "",
 				nvim_lsp = "",
-				luasnip = "",
-				buffer = "",
 				path = "",
+				buffer = "",
 			})[entry.source.name]
 			return vim_item
 		end
 	},
 	sources = {
+		{ name = "codeium" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
@@ -113,7 +113,6 @@ cmp.setup {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	-- documentation = true,
 	window = {
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -121,6 +120,5 @@ cmp.setup {
 	},
 	experimental = {
 		ghost_text = true,
-		native_menu = false,
 	},
 }
