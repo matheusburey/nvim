@@ -10,14 +10,13 @@ local opt = vim.opt         		-- global/buffer/windows-scoped options
 opt.mouse = "a"               -- enable mouse support
 opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
 opt.swapfile = false          -- don't use swapfile
+opt.whichwrap:append "<>[]hl"
 
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true             -- show line number
 opt.showmatch = true          -- highlight matching parenthesis
-opt.splitright = false         -- vertical split to the right
-opt.splitbelow = false         -- orizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = false          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
@@ -28,15 +27,18 @@ opt.splitbelow = true         -- force all horizontal splits to go below current
 opt.splitright = true         -- force all vertical splits to go to the right of current window
 opt.undofile = true           -- enable persistent undo
 opt.updatetime = 300          -- faster completion (4000ms default)
-opt.numberwidth = 2           -- define a largura da coluna do número para 2 {padrão 4}
+opt.numberwidth = 3           -- define a largura da coluna do número para 2 {padrão 4}
 opt.foldlevel = 10            -- Using ufo provider need a large value, feel free to decrease the value
+opt.timeoutlen = 400
+opt.ruler = false
+opt.shortmess:append "sI"
 
 -----------------------------------------------------------
 -- Memory, CPU
 -----------------------------------------------------------
 opt.hidden = true         -- enable background buffers
-opt.history = 100         -- remember n lines in history
-opt.lazyredraw = true     -- faster scrolling
+opt.history = 50         -- remember n lines in history
+opt.lazyredraw = false     -- faster scrolling
 opt.synmaxcol = 240       -- max column for syntax highlight
 
 -----------------------------------------------------------
@@ -55,3 +57,7 @@ opt.smartindent = true    -- autoindent new lines
 opt.wrap = false          -- exibe as linhas como uma linha longa
 opt.colorcolumn = "120"
 opt.showtabline = 2       -- always show tabs
+opt.softtabstop = 2
+
+opt.fillchars = { eob = " " }
+opt.laststatus = 3
