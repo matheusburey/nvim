@@ -90,6 +90,19 @@ end
 
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
-require 'lspconfig'.pyright.setup {}
+local status_ok, lspconfig = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
+lspconfig.pyright.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+}
+lspconfig.lua_ls.setup{}
 
 return M
