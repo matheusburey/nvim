@@ -105,5 +105,7 @@ return packer.startup(function(use)
   use "b0o/SchemaStore.nvim"
 
   -- ultrafast Copilot alternative for Vim and Neovim
-  use "jcdickinson/codeium.nvim" 
+  use "jcdickinson/codeium.nvim"
+  -- plugin adds indentation guides
+  use "lukas-reineke/indent-blankline.nvim"
 end)
