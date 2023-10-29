@@ -70,3 +70,22 @@ map("n", "<F10>", "<cmd>lua _HTOP_TOGGLE()<CR>", default_opts)
 
 map("n", "<F3>", ":TermExec cmd='git commit'<CR>", default_opts)
 map("n", "<F5>", ":TermExec cmd='npm run dev'<CR>", default_opts)
+
+
+-- LSP Diagnostics
+-- diagnostic
+map("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", default_opts)
+map("n", "<leader>n", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', default_opts)
+map("n", "<leader>b", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', default_opts)
+map("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", default_opts)
+
+-- Buffer local mappings.
+map('n', '<C-K>', "<cmd>vim.lsp.buf.declaration()<CR>", default_opts)
+map("n", "<C-k>", "<cmd>lua vim.lsp.buf.definition()<CR>", default_opts)
+map("n", "<C-Space>", "<cmd>lua vim.lsp.buf.hover()<CR>", default_opts)
+map("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", default_opts)
+map("n", "<leader>k", "<cmd>lua vim.lsp.buf.signature_help()<CR>", default_opts)
+map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", default_opts)
+map("n", "<leader>f", "<cmd>lua vim.lsp.buf.references()<CR>", default_opts)
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", default_opts)
+map("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", default_opts)
