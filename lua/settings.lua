@@ -27,7 +27,7 @@ opt.splitbelow = true         -- force all horizontal splits to go below current
 opt.splitright = true         -- force all vertical splits to go to the right of current window
 opt.undofile = true           -- enable persistent undo
 opt.updatetime = 300          -- faster completion (4000ms default)
-opt.numberwidth = 3           -- define a largura da coluna do número para 2 {padrão 4}
+opt.numberwidth = 2           -- define a largura da coluna do número para 2 {padrão 4}
 opt.foldlevel = 10            -- Using ufo provider need a large value, feel free to decrease the value
 opt.timeoutlen = 400
 opt.ruler = false
@@ -38,7 +38,7 @@ opt.shortmess:append "sI"
 -----------------------------------------------------------
 opt.hidden = true         -- enable background buffers
 opt.history = 50         -- remember n lines in history
-opt.lazyredraw = false     -- faster scrolling
+opt.lazyredraw = true     -- faster scrolling
 opt.synmaxcol = 240       -- max column for syntax highlight
 
 -----------------------------------------------------------
