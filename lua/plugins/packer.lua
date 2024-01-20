@@ -97,7 +97,6 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- Packer lspconf
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim"
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Packer Show function signature when you type
   use "ray-x/lsp_signature.nvim"

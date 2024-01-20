@@ -6,6 +6,7 @@ end
 mason.setup({
   ensure_installed = {
     "pyright",
+    "ruff_lsp",
     "tsserver",
     "rust_analyzer",
     "lua_ls",
