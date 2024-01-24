@@ -8,6 +8,7 @@ mason.setup({
     "pyright",
     "ruff_lsp",
     "tsserver",
+    "biome",
     "rust_analyzer",
     "lua_ls",
     "sqlls"
