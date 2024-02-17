@@ -11,7 +11,9 @@ mason.setup({
     "biome",
     "rust_analyzer",
     "lua_ls",
-    "sqlls"
+    "sqlls",
+    "volar",
+    "html"
   },
   automatic_installation = true
 })
@@ -21,4 +23,3 @@ mason.setup_handlers({
     require("lspconfig")[server_name].setup {}
   end
 })
-

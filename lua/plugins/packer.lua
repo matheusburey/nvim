@@ -54,9 +54,6 @@ return packer.startup(function(use)
   -- Packer statusline
   use "feline-nvim/feline.nvim"
 
-  -- Packer theme dracula
-  use "Mofiqul/dracula.nvim"
-
   -- Packer autopairs
   use "windwp/nvim-autopairs"
 
