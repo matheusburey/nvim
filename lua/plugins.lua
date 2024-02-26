@@ -13,7 +13,7 @@ end
 
 require("plugins.autopairs")
 require("plugins.dashboard")
-require("plugins.feline")
+require("plugins.statusline")
 require("plugins.cmp")
 require("plugins.treesitter")
 require("plugins.mason-lspconfig")

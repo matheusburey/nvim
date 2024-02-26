@@ -52,7 +52,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
 
   -- Packer statusline
-  use "feline-nvim/feline.nvim"
+  use "nvim-lualine/lualine.nvim"
 
   -- Packer autopairs
   use "windwp/nvim-autopairs"
