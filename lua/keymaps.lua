@@ -27,19 +27,19 @@ map("n", "<C-q>", ":quit<CR>", default_opts)
 -- paste does not change clipboard
 map("v", "p", '"_dP', { silent = true })
 
--- Move text up and down
-map("n", "<M-k>", ":m .-2<CR>", default_opts)
-map("n", "<M-j>", ":m .+1<CR>", default_opts)
-
--- Visual Block --
-map("x", "<M-k>", ":m '<-2<CR>gv-gv", default_opts)
-map("x", "<M-j>", ":m '>+1<CR>gv-gv", default_opts)
+-- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", default_opts)
+map("n", "<A-k>", "<cmd>m .-2<cr>==", default_opts)
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", default_opts)
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", default_opts)
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", default_opts)
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", default_opts)
 
 -- Better window navigation
-map("n", "<M-H>", "<C-w>h", default_opts)
-map("n", "<M-J>", "<C-w>j", default_opts)
-map("n", "<M-K>", "<C-w>k", default_opts)
-map("n", "<M-L>", "<C-w>l", default_opts)
+map("n", "<C-H>", "<C-w>h", default_opts)
+map("n", "<C-J>", "<C-w>j", default_opts)
+map("n", "<C-K>", "<C-w>k", default_opts)
+map("n", "<C-L>", "<C-w>l", default_opts)
 
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>", default_opts)
@@ -79,3 +79,9 @@ map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", default_opts)
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.references()<CR>", default_opts)
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", default_opts)
 map("n", "<C-f>", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", default_opts)
+
+
+-- Add undo break-points
+map("i", ",", ",<c-g>u", default_opts)
+map("i", ".", ".<c-g>u", default_opts)
+map("i", ";", ";<c-g>u", default_opts)

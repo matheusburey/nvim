@@ -55,7 +55,7 @@ opt.shiftwidth = 2        -- shift 2 spaces when tab
 opt.tabstop = 2           -- 1 tab == 2 spaces
 opt.smartindent = true    -- autoindent new lines
 opt.wrap = false          -- exibe as linhas como uma linha longa
-opt.colorcolumn = "120"
+opt.colorcolumn = "100"
 opt.showtabline = 2       -- always show tabs
 opt.softtabstop = 2
 
