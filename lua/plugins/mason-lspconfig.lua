@@ -7,13 +7,24 @@ mason.setup({
   ensure_installed = {
     "pyright",
     "ruff_lsp",
-    "tsserver",
+    "ts_ls",
+    "jsonls",
     "biome",
     "rust_analyzer",
     "lua_ls",
+    "lemminx",
     "sqlls",
     "volar",
-    "html"
+    "html",
+    "tailwindcss",
+    "eslint",
+    "bashls",
+    "cssls",
+    "gopls",
+    "html",
+    "ast_grep",
+    "yamlls",
+    "dockerls"
   },
   automatic_installation = true
 })
