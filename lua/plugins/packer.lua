@@ -102,4 +102,6 @@ return packer.startup(function(use)
   use "jcdickinson/codeium.nvim"
   -- plugin adds indentation guides
   use "lukas-reineke/indent-blankline.nvim"
+
+  use "navarasu/onedark.nvim"
 end)

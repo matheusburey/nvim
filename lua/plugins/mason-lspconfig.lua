@@ -5,8 +5,7 @@ end
 
 mason.setup({
   ensure_installed = {
-    "pyright",
-    "ruff_lsp",
+    "ruff",
     "ts_ls",
     "jsonls",
     "biome",
