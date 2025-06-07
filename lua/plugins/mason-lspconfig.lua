@@ -5,22 +5,18 @@ end
 
 mason.setup({
   ensure_installed = {
-    "ruff",
-    "ts_ls",
-    "jsonls",
-    "biome",
-    "rust_analyzer",
-    "lua_ls",
-    "lemminx",
+    "ruff",  -- python
+    "ts_ls", -- typescript
+    "biome", --js ts json
+    "rust_analyzer", --rust
+    "lua_ls", --lua
     "sqlls",
-    "volar",
+    "vue_ls",
     "html",
     "tailwindcss",
-    "eslint",
     "bashls",
     "cssls",
     "gopls",
-    "html",
     "ast_grep",
     "yamlls",
     "dockerls"
@@ -28,8 +24,3 @@ mason.setup({
   automatic_installation = true
 })
 
-mason.setup_handlers({
-  function(server_name)
-    require("lspconfig")[server_name].setup {}
-  end
-})
