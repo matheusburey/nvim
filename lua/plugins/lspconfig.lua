@@ -1,5 +1,6 @@
 local M = {}
-local localVim = vim
+local diagnostic = vim.diagnostic
+local lsp = vim.lsp
 
 M.setup = function()
   local icons = {
@@ -7,17 +8,17 @@ M.setup = function()
     Warning = "",
     Information = "",
     Question = "",
-    Hint = ""
+    Hint = ""
   }
 
   local config = {
     virtual_text = false,
     signs = {
       text = {
-       [localVim.diagnostic.severity.ERROR] = icons.Error ,
-       [localVim.diagnostic.severity.WARN] = icons.Warning ,
-       [localVim.diagnostic.severity.HINT] = icons.Hint ,
-       [localVim.diagnostic.severity.INFO] = icons.Information ,
+       [diagnostic.severity.ERROR] = icons.Error ,
+       [diagnostic.severity.WARN] = icons.Warning ,
+       [diagnostic.severity.HINT] = icons.Hint ,
+       [diagnostic.severity.INFO] = icons.Information ,
     }
   },
     update_in_insert = true,
@@ -33,16 +34,16 @@ M.setup = function()
     },
   }
 
-  localVim.diagnostic.config(config)
+  diagnostic.config(config)
 
   local cfg = { border = "rounded" }
 
-  localVim.lsp.handlers["textDocument/hover"] = localVim.lsp.with(localVim.lsp.handlers.hover, cfg)
+  lsp.handlers["textDocument/hover"] = lsp.with(lsp.handlers.hover, cfg)
 
-  localVim.lsp.handlers["textDocument/signatureHelp"] = localVim.lsp.with(localVim.lsp.handlers.signature_help, cfg)
+  lsp.handlers["textDocument/signatureHelp"] = lsp.with(lsp.handlers.signature_help, cfg)
 end
 
-local capabilities = localVim.lsp.protocol.make_client_capabilities()
+local capabilities = lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
