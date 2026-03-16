@@ -98,8 +98,6 @@ return packer.startup(function(use)
   -- Packer Neovim Lua plugin providing access to the SchemaStore catalog.
   use "b0o/SchemaStore.nvim"
 
-  -- ultrafast Copilot alternative for Vim and Neovim
-  use "jcdickinson/codeium.nvim"
   -- plugin adds indentation guides
   use "lukas-reineke/indent-blankline.nvim"
 
