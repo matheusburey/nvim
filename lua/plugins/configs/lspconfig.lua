@@ -15,12 +15,12 @@ M.setup = function()
     virtual_text = false,
     signs = {
       text = {
-       [diagnostic.severity.ERROR] = icons.Error ,
-       [diagnostic.severity.WARN] = icons.Warning ,
-       [diagnostic.severity.HINT] = icons.Hint ,
-       [diagnostic.severity.INFO] = icons.Information ,
-    }
-  },
+        [diagnostic.severity.ERROR] = icons.Error,
+        [diagnostic.severity.WARN] = icons.Warning,
+        [diagnostic.severity.HINT] = icons.Hint,
+        [diagnostic.severity.INFO] = icons.Information,
+      }
+    },
     update_in_insert = true,
     underline = true,
     severity_sort = true,
