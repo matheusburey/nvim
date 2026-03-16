@@ -5,11 +5,11 @@ end
 
 mason.setup({
   ensure_installed = {
-    "ruff",  -- python
-    "ts_ls", -- typescript
-    "biome", --js ts json
+    "ruff",          -- python
+    "ts_ls",         -- typescript
+    "biome",         --js ts json
     "rust_analyzer", --rust
-    "lua_ls", --lua
+    "lua_ls",        --lua
     "sqlls",
     "vue_ls",
     "html",
